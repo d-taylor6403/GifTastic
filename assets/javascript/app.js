@@ -4,6 +4,9 @@ var topics = ["Buffy The Vampire Slayer", "CW The Originals", "Vampire Diaries",
 
 //Function that will call the API and retun json results
 function displayvampGif(){
+    
+    $(".gif-container").empty();
+    
     var vampGif = $(this).attr("data-vampGif");
     var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + vampGif + "&api_key=64O8bLIN8MebVhEg7hVRRlTAppg80b9y&limit=10&lang=en"
 
@@ -30,16 +33,50 @@ function displayvampGif(){
     
                 gifDiv.append(gifImage);
                 gifDiv.append(ratingP);
-    
+                    
                 $(".gif-container").prepend(gifDiv);
+                
             }
-            
-           
         });
-    
     }
     
-    //Function to change gif from still to animated
+
+    //Function to call IMBD API
+    function displaySummary(){
+        $(".summary-container").empty();
+        
+        
+        var vampGif = $(this).attr("data-vampGif");
+        var queryUrl = "http://www.omdbapi.com/?t=" + vampGif + "&apikey=8c6e53eb"
+    
+        $.ajax({
+            url: queryUrl,
+            method: "GET"
+            }).then(function(response) {
+                console.log(response);
+        
+                var results = response.Plot;
+                console.log(results);
+        
+               // for (var i = 0; i <= results.length; i++) {
+
+                    var summaryDiv = $("<div>").attr("class", "summaryDiv");
+                    var gifPlot = $("<p>");
+
+                   summaryDiv.attr("src", results);
+                   
+
+                    summaryDiv.append(gifPlot);
+
+                    $(".summary-container").prepend(results);
+                    
+                }
+            );
+            
+        }
+
+    
+    //On click events to animate and pause gifs
     $(document).on("click", ".gif", function() {
         var state = $(this).attr("data-state");
     
@@ -53,6 +90,7 @@ function displayvampGif(){
     
     });
     
+    //Function to create new button
     function renderButtons() {
     
         $("#gif-buttons").empty();
@@ -71,6 +109,8 @@ function displayvampGif(){
         renderButtons();
     });
     
+    $(document).on("click", ".vampGif", displaySummary);
     $(document).on("click", ".vampGif", displayvampGif);
+    
     
     renderButtons()});
