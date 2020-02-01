@@ -107,6 +107,7 @@ function displayvampGif(){
         var vampGif = $("#user-input").val().trim();
         topics.push(vampGif);
         renderButtons();
+        $("#user-form").trigger("reset");
     });
     
     $(document).on("click", ".vampGif", displaySummary);
