@@ -1,6 +1,6 @@
 $(document).ready(function() { 
 //Starting array that will be used to create button labels and create search term
-var topics = ["Buffy The Vampire Slayer", "CW The Originals", "Vampire Diaries", "The Passage","True Blood", "Twilight", "Shadow Hunter\'s", "Underworld", "Blade", "Interview With A Vampire"];
+var topics = ["Buffy The Vampire Slayer", "The Last Witch Hunter","Vampire Diaries","The Craft", "The Passage","The Covenant","True Blood", "Beautiful Creatures","Twilight", "Blade"];
 
 //Function that will call the API and retun json results
 function displayvampGif(){
@@ -68,7 +68,7 @@ function displayvampGif(){
 
                     summaryDiv.append(gifPlot);
 
-                    $(".summary-container").prepend(results);
+                    $(".summary-container").prepend("<h4>Summary Plot: </h4>"  + results);
                     
                 }
             );
@@ -97,7 +97,7 @@ function displayvampGif(){
     
         for (var i = 0; i < topics.length; i++) {
             var gifButton = $("<button>");
-            gifButton.attr("type", "button").attr("class", "btn btn-dark vampGif").text(topics[i]).attr("data-vampGif", topics[i]).attr("id", "gif-button");
+            gifButton.attr("type", "button").attr("class", "btn btn-danger vampGif").text(topics[i]).attr("data-vampGif", topics[i]).attr("id", "gif-button");
             $("#gif-buttons").append(gifButton);
         }
     }
