@@ -1,0 +1,68 @@
+body{
+    background-color: #0D0A09;
+    color: #ffffff;
+    padding-top: 1%;
+}
+
+header, #gif-buttons{
+    margin-bottom: 1%;
+}
+
+h1{
+    
+    font-size: 40px;
+    font-weight: 700;
+    text-shadow: 2px 2px red;
+}
+
+#submit-input{
+    cursor: pointer;
+}
+
+.summary-container{
+    margin-bottom: 5px;
+}
+
+.gif-container{
+    margin-top: 25px;
+}
+
+
+.vampGif{
+    cursor: pointer;
+}
+
+.gif{
+    cursor: pointer;
+}
+
+p{
+    text-transform: uppercase;
+    padding-left: 1%;
+}
+
+.vampGif{
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+
+.gifDiv{
+    margin-right: 1%;
+}
+
+.rating{
+    background-color: red;
+    color: white;
+}
+
+/*Style settings for browser widths 768px or less. */
+
+@media screen and (max-width: 768px) {
+    .gif{
+        width: 100%;
+    }
+
+    #submit-input{
+        margin-left: 15px;
+    }
+}

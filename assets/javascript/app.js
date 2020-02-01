@@ -20,7 +20,7 @@ function displayvampGif(){
     
             for (var i = 0; i <= results.length; i++) {
     
-                var gifDiv = $("<div>").attr("class", "gifDiv float-md-left");
+                var gifDiv = $("<div>").attr("class", "gifDiv float-sm-left");
                 var gifImage = $("<img>");
                 gifImage.attr("class", "img-fluid gif");
                 
