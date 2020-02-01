@@ -47,7 +47,7 @@ function displayvampGif(){
         
         
         var vampGif = $(this).attr("data-vampGif");
-        var queryUrl = "http://www.omdbapi.com/?t=" + vampGif + "&apikey=8c6e53eb"
+        var queryUrl = "https://www.omdbapi.com/?t=" + vampGif + "&apikey=8c6e53eb"
     
         $.ajax({
             url: queryUrl,
