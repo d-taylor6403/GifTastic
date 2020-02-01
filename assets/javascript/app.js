@@ -68,7 +68,7 @@ function displayvampGif(){
 
                     summaryDiv.append(gifPlot);
 
-                    $(".summary-container").prepend("<h4>Summary Plot: </h4>"  + results);
+                    $(".summary-container").prepend("<h4>Plot Summary: </h4>"  + results);
                     
                 }
             );
